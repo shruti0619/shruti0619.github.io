@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #faf9f6;
+    color: #1e1e2a;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+/* ---------- KAART ---------- */
+.card {
+    max-width: 1000px;
+    width: 100%;
+    background: white;
+    border-radius: 2.5rem;
+    box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1), 0 8px 24px -6px rgba(0,0,0,0.05);
+    padding: 2.5rem 2.5rem 3rem;
+    transition: all 0.2s ease;
+}
+
+/* ---------- NAVIGATIE ---------- */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid #ececf0;
+    padding-bottom: 1.2rem;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #3e3e4a;
+    padding: 0.4rem 0.2rem;
+    border-bottom: 2px solid transparent;
+    transition: 0.15s ease;
+    letter-spacing: -0.01em;
+}
+
+nav a i {
+    margin-right: 6px;
+    font-size: 0.95rem;
+    opacity: 0.7;
+}
+
+nav a:hover {
+    color: #000;
+    border-bottom-color: #b7b0d4;
+}
+
+nav a.active {
+    color: #2b1f4a;
+    border-bottom-color: #6b5b9e;
+    font-weight: 600;
+}
+
+/* ---------- INHOUD ---------- */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+}
+
+/* Begroeting */
+.greeting {
+    text-align: center;
+}
+
+.greeting h1 {
+    font-size: 3.2rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #1a142b;
+}
+
+.greeting h1 span {
+    background: linear-gradient(145deg, #6b5b9e, #3d2f66);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.greeting .sub {
+    margin-top: 0.25rem;
+    font-size: 1.1rem;
+    color: #55506b;
+    border-top: 1px solid #e4e1ed;
+    display: inline-block;
+    padding-top: 0.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Grid: foto + tekst */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2.5rem;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+/* FOTO-PLACEHOLDER */
+.photo-placeholder {
+    background: #edeaf3;
+    border-radius: 2rem;
+    min-height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1.5rem;
+    border: 2px dashed #b8afcf;
+    color: #3b3452;
+    text-align: center;
+    transition: background 0.2s;
+    box-shadow: inset 0 4px 8px rgba(0,0,0,0.02);
+}
+
+.photo-placeholder i {
+    font-size: 3.2rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.5;
+    color: #5d4d7a;
+}
+
+.photo-placeholder p {
+    font-weight: 400;
+    font-size: 0.95rem;
+    background: rgba(255,255,255,0.4);
+    padding: 0.3rem 1rem;
+    border-radius: 40px;
+    backdrop-filter: blur(2px);
+}
+
+.photo-placeholder .small-note {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    opacity: 0.6;
+}
+
+/* TEKST-PLACEHOLDER */
+.text-placeholder {
+    background: #f6f5fa;
+    padding: 1.8rem 2rem;
+    border-radius: 2rem;
+    border: 1px solid #e9e6f0;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-placeholder h3 {
+    font-weight: 500;
+    color: #2a2340;
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+}
+
+.text-placeholder .fake-text {
+    color: #3f3857;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.text-placeholder .fake-text i {
+    color: #6b5b9e;
+    margin-right: 6px;
+}
+
+.text-placeholder .divider-light {
+    width: 50px;
+    height: 2px;
+    background: #cfc6e6;
+    margin: 0.75rem 0 0.5rem;
+    border-radius: 10px;
+}
+
+/* Extra links onderaan */
+.extra-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eae7f0;
+    font-size: 0.9rem;
+    color: #4c4563;
+}
+
+.extra-links span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 700px) {
+    .card {
+        padding: 1.5rem;
+    }
+    .profile-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .greeting h1 {
+        font-size: 2.4rem;
+    }
+    .photo-placeholder {
+        min-height: 180px;
+    }
+    nav a {
+        font-size: 1rem;
+    }
+}
