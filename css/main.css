@@ -271,3 +271,12 @@ footer {
         gap:10px;
     }
 }
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    body {
+        padding: 10px;
+    }
+}
