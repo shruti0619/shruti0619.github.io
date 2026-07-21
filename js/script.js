@@ -1,24 +1,21 @@
-// Wacht tot de DOM geladen is
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ---- 1. NAVIGATIE: active state ----
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault(); // voorkom paginasprong voor demo
+            e.preventDefault(); 
 
-            // Verwijder active van alle links
+          
             navLinks.forEach(l => l.classList.remove('active'));
-            // Voeg active toe aan de geklikte link
             this.classList.add('active');
 
-            // Kleine melding in console
+           
             const linkText = this.textContent.trim();
-            console.log(`🌱 Navigatie: "${linkText}" geselecteerd`);
+            console.log(` Navigatie: "${linkText}" geselecteerd`);
         });
     });
 
-    // ---- 2. INTERACTIE OP FOTO-VAK ----
+
     const photoBox = document.getElementById('fotoContainer');
     if (photoBox) {
         photoBox.addEventListener('mouseenter', function() {
@@ -31,11 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.borderColor = '#b8afcf';
         });
         photoBox.addEventListener('click', function() {
-            alert('📸 Hier kun je jouw eigen foto plaatsen!\n(Vervang de placeholder door een <img> of achtergrondafbeelding)');
+            alert(' Hier kun je jouw eigen foto plaatsen!\n(Vervang de placeholder door een <img> of achtergrondafbeelding)');
         });
     }
 
-    // ---- 3. INTERACTIE OP TEKST-VAK ----
+
     const textBox = document.getElementById('tekstContainer');
     if (textBox) {
         textBox.addEventListener('mouseenter', function() {
@@ -48,10 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.borderColor = '#e9e6f0';
         });
         textBox.addEventListener('click', function() {
-            alert('✍️ Hier kun je jouw eigen tekst plaatsen.\nPas de HTML aan of gebruik een CMS.');
+            alert('Hier kun je jouw eigen tekst plaatsen.\nPas de HTML aan of gebruik een CMS.');
         });
     }
 
-    // ---- 4. WELKOMSTBERICHT ----
-    console.log('✅ Hallo Shruti! Je homepage is klaar. Veel plezier met aanpassen.');
+    console.log('Hallo Shruti! Je homepage is klaar. Veel plezier met aanpassen.');
 });
